@@ -1,0 +1,52 @@
+/* dark-mode.css */
+
+body {
+  transition: background-color 0.5s ease;
+}
+
+.dark-mode-toggle {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.dark-mode-toggle::before {
+  content: "🌙";
+  transition: transform 0.5s ease;
+}
+
+body.dark-mode .dark-mode-toggle::before {
+  content: "☀️";
+  transform: rotate(180deg);
+}
+
+body.dark-mode {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Add animation to other elements when in dark mode */
+body.dark-mode #profile img,
+body.dark-mode #about img,
+body.dark-mode #experience img,
+body.dark-mode #projects .project-img {
+  filter: invert(1);
+  transition: filter 0.5s ease;
+}
+
+body.dark-mode #profile img,
+body.dark-mode #about img,
+body.dark-mode #experience img,
+body.dark-mode #projects .project-img {
+  filter: brightness(0.7); /* Sesuaikan nilai brightness sesuai keinginan */
+  transition: filter 0.5s ease;;
+}
+
+body.dark-mode #profile .btn:hover,
+body.dark-mode #about .btn:hover,
+body.dark-mode #experience .btn:hover,
+body.dark-mode #projects .btn:hover,
+body.dark-mode .nav-links a:hover {
+  background-color: #555;
+}
+
